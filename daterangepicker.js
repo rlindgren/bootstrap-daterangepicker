@@ -367,7 +367,7 @@
         if (this.timePicker && this.autoApply)
             this.autoApply = false;
 
-        if (this.autoApply && typeof options.ranges !== 'object') {
+        if (this.autoApply && typeof options.ranges !== 'object' && !this.showButtons) {
             this.container.find('.ranges').hide();
         } else if (this.autoApply && !this.showButtons) {
             this.container.find('.applyBtn, .cancelBtn').addClass('hide');
