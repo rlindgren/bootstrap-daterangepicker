@@ -37,6 +37,7 @@
         this.maxDate = false;
         this.dateLimit = false;
         this.autoApply = false;
+        this.showButtons = false;
         this.singleDatePicker = false;
         this.showDropdowns = false;
         this.showWeekNumbers = false;
@@ -252,6 +253,9 @@
         if (typeof options.autoApply === 'boolean')
             this.autoApply = options.autoApply;
 
+        if (typeof options.showButtons === 'boolean')
+            this.showButtons = options.showButtons;
+
         if (typeof options.autoUpdateInput === 'boolean')
             this.autoUpdateInput = options.autoUpdateInput;
 
@@ -365,7 +369,7 @@
 
         if (this.autoApply && typeof options.ranges !== 'object') {
             this.container.find('.ranges').hide();
-        } else if (this.autoApply) {
+        } else if (this.autoApply && !this.showButtons) {
             this.container.find('.applyBtn, .cancelBtn').addClass('hide');
         }
 
